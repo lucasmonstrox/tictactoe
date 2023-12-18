@@ -50,8 +50,7 @@ class Game:
         return 'x' if self.currentMoveShape == 'o' else 'o'
 
     def hasMinimumMovesToHaveWinner(self) -> bool:
-        numberOfMoves = len(self.moves)
-        return numberOfMoves >= self.minimumMovesToHaveWinner
+        return len(self.moves) >= self.minimumMovesToHaveWinner
 
     def isFreeMove(self, move: Move) -> bool:
         x, y = move
@@ -61,7 +60,7 @@ class Game:
         minimumXYAxis = 0
         maximumXYAxis = 2
         x, y = move
-        return (x >= minimumXYAxis and x <= maximumXYAxis) and (y >= minimumXYAxis and y <= maximumXYAxis)
+        return (minimumXYAxis <= x <= maximumXYAxis) and (minimumXYAxis <= y <= maximumXYAxis)
 
     # TODO: split verification in more methods, also, clean code
     def moveDidWin(self, shape: MoveShape, move: Move) -> bool:
