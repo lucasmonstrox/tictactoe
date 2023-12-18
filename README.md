@@ -47,7 +47,7 @@ game.result
 ## 🧪 Running tests
 
 ```bash
-poetry run python -m pytest
+poetry run python -m pytest ./tests/
 ```
 
 With code coverage
