@@ -25,7 +25,7 @@ game.addMove((0, 0))
 game.gameover()
 
 # getting next move shape("x" or "o")
-game.gameover()
+game.getNextMoveShape()
 
 # checking if game has minimum moves to have a winner
 game.hasMinimumMovesToHaveWinner()
@@ -59,6 +59,7 @@ poetry run python -m pytest --cov=src --cov-report html ./tests/
 # ✅ TODO
 
 - add way to test all moves
+- add mypy
 
 # 👷 Authors
 
