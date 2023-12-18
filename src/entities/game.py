@@ -70,10 +70,10 @@ class Game:
         # checking if all column values are same
         if np.all(self.board[:, x] == shape, axis=0):
             return True
-        # x == y == 2 -> represents primary diagonal coordiantes: (0, 0), (1, 1) or (2, 2)
+        # x == y == 2 -> represents primary diagonal coordinates: (0, 0), (1, 1) or (2, 2)
         if x == y and np.all(np.diag(self.board) == shape, axis=0):
             return True
-        # x + y == 2 -> represents secondary diagonal coordiantes: (0, 2), (1, 1) or (2, 0)
+        # x + y == 2 -> represents secondary diagonal coordinates: (0, 2), (1, 1) or (2, 0)
         if (x + y) == 2 and np.all(np.diag(np.fliplr(self.board)) == shape, axis=0):
             return True
         return False
