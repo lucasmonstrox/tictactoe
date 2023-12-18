@@ -1,11 +1,11 @@
 import numpy as np
 from ..errors import Gameover, InvalidMove, MoveIsBusy
-from .typings import CircleOrCross, GameResult, Move, MoveList
+from .typings import MoveShape, GameResult, Move, MoveList
 
 
 class Game:
     board: np.ndarray
-    currentMoveShape: CircleOrCross
+    currentMoveShape: MoveShape
     moves: MoveList
     minimumMovesToHaveWinner: int
     maximumMovesUntilEnd: int
@@ -46,7 +46,7 @@ class Game:
     def gameover(self) -> bool:
         return self.result is not None
 
-    def getNextMoveShape(self) -> CircleOrCross:
+    def getNextMoveShape(self) -> MoveShape:
         return 'x' if self.currentMoveShape == 'o' else 'o'
 
     def hasMinimumMovesToHaveWinner(self) -> bool:
@@ -64,7 +64,7 @@ class Game:
         return (x >= minimumXYAxis and x <= maximumXYAxis) and (y >= minimumXYAxis and y <= maximumXYAxis)
 
     # TODO: split verification in more methods, also, clean code
-    def moveDidWin(self, shape: CircleOrCross, move: Move) -> bool:
+    def moveDidWin(self, shape: MoveShape, move: Move) -> bool:
         x, y = move
         # checking if all row values are same
         if np.all(self.board[y, :] == shape, axis=0):
