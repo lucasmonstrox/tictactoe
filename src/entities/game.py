@@ -1,6 +1,6 @@
 import numpy as np
 from ..errors import Gameover, InvalidMove, MoveIsBusy
-from .typings import CircleOrCross, DrawOrShape, Move, MoveList
+from .typings import CircleOrCross, GameResult, Move, MoveList
 
 
 class Game:
@@ -9,7 +9,7 @@ class Game:
     moves: MoveList
     minimumMovesToHaveWinner: int
     maximumMovesUntilEnd: int
-    result: DrawOrShape
+    result: GameResult
 
     def __init__(self, moves: MoveList | None = None):
         self.board = np.full((3, 3), '', dtype=np.str_)
