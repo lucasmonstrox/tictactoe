@@ -58,8 +58,10 @@ class Game:
         return self.board[y, x] == ''
 
     def isValidMove(self, move: Move) -> bool:
+        minimumXYAxis = 0
+        maximumXYAxis = 2
         x, y = move
-        return (x >= 0 and x <= 2) and (y >= 0 and y <= 2)
+        return (x >= minimumXYAxis and x <= maximumXYAxis) and (y >= minimumXYAxis and y <= maximumXYAxis)
 
     # TODO: split verification in more methods, also, clean code
     def moveDidWin(self, shape: CircleOrCross, move: Move) -> bool:
