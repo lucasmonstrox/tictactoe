@@ -1,6 +1,6 @@
 # 📝 Description
 
-Simple SDK class
+Simple TicTacToe game class
 
 # Prerequisites
 
