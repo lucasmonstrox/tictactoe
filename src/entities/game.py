@@ -12,11 +12,7 @@ class Game:
     result: DrawOrShape
 
     def __init__(self, moves: MoveList | None = None):
-        self.board = np.array([
-            ['', '', ''],
-            ['', '', ''],
-            ['', '', '']
-        ], dtype=np.str_)
+        self.board = np.full((3, 3), '', dtype=np.str_)
         self.currentMoveShape = 'o'
         self.minimumMovesToHaveWinner = 5
         self.maximumMovesUntilEnd = 9
